@@ -24,7 +24,6 @@ do
                                 END=$(date +%s%3N)
                                 DIFF=$(($END - $START))
                                 echo "${HST}:${PRT} | Success | $DIFF ms"
-#                       else
 
                         fi
                         ;;
