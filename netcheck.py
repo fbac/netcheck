@@ -7,6 +7,7 @@ import sys
 import socket
 import time
 
+# Check DNS
 def dns(host):
     try:
         socket.gethostbyname(host)
@@ -14,6 +15,7 @@ def dns(host):
     except socket.error:
         return 1
 
+# Check connection and get socket.error
 def alive(host, port):
     try:
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -25,6 +27,7 @@ def alive(host, port):
 
 file = open(sys.argv[1], "r")
 errors = {
+    1 : "Unknown socket.error",
     104 : "Connection rejected",
     110 : "Timeout",
     111 : "Service not running"
