@@ -40,12 +40,12 @@ for line in file:
     port = int(line.split(":")[1])
     init = time.time()
     testdns = dns(host)
-    testalive = alive(host, port)
 
     if (dns(host) == 1):
         end = time.time()
         print ("{0}:{1} | DNS record does not exist | {2}s").format(host, port, round((end - init), 3))
     else:
+        testalive = alive(host, port)
         if (testalive == 0):
             end = time.time()
             print ("{0}:{1} | Success | {2}s").format(host, port, round((end - init), 3))
