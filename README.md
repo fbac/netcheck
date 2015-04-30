@@ -1,2 +1,2 @@
 # netcheck
-Port checking
+port checking
